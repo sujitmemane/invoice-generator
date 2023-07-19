@@ -11,6 +11,8 @@ import {
   TableForm,
 } from "./components";
 
+import AppContextProvider from "./store/AppContextProvider";
+
 function App() {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
@@ -43,7 +45,7 @@ function App() {
     window.print();
   };
   return (
-    <>
+    <AppContextProvider>
       <main className="main-container">
         {showInvoice ? (
           <>
@@ -278,7 +280,7 @@ function App() {
           </>
         )}
       </main>
-    </>
+    </AppContextProvider>
   );
 }
 
